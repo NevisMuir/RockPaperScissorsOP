@@ -14,7 +14,27 @@
             num = Math.floor(Math.random()*3);
             return RPS[num];
          }
-         let computerSelection=computerPlay()
+         console.log(computerPlay());
+         const computerSelection=computerPlay();
+         console.log(computerSelection)
+         const playerSelection="scissors"
+         
+         function playRound(playerSelection,computerSelection){
+             if (playerSelection==computerSelection){
+                 return 'It\'s a draw! Both players chose '+playerSelection;
+             } else if(playerSelection==="rock" && computerSelection==="scissors" || playerSelection==="paper" && computerSelection==="rock" || playerSelection==="scissors" && computerSelection==="paper"){
+                 return 'You Win! '+playerSelection+' beats '+computerSelection
+             }else if(playerSelection==="rock" && computerSelection==="paper" || playerSelection==="paper" && computerSelection==="scissors" || playerSelection==="scissors" && computerSelection==="rock"){
+                 return 'You Lose! '+computerSelection+' beats '+playerSelection;
+             }
+            }
+            console.log(playRound(playerSelection,computerSelection))
+            
+        
+             
+
+
+         
     
 
     
