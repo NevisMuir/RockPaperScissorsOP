@@ -9,16 +9,17 @@
 <body>
     <script>
         const RPS = ['rock', 'paper', 'scissors']
-        
+        //randomly generating rock, paper or scissors
         function computerPlay(){
             num = Math.floor(Math.random()*3);
             return RPS[num];
          }
-         console.log(computerPlay());
+         //the computers decision is now a variable
          const computerSelection=computerPlay();
-         console.log(computerSelection)
-         const playerSelection="scissors"
-         
+         //the player is prompted with a choice, and that choice is converted to lowercase
+        let playerChoice=prompt("Do you choose Rock, Paper, or Scissors?");
+         const playerSelection=playerChoice.toLowerCase()
+         //simple round of play
          function playRound(playerSelection,computerSelection){
              if (playerSelection==computerSelection){
                  return 'It\'s a draw! Both players chose '+playerSelection;
