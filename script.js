@@ -1,7 +1,7 @@
-const RPS = ['rock', 'paper', 'scissors']
+const RPS = ['Rock', 'Paper', 'Scissors']
 const result = document.querySelector('#result');
 
-//randomly generating rock, paper or scissors
+//randomly generating Rock, Paper or Scissors
 function computerPlay(){
   num = Math.floor(Math.random()*3);
   return RPS[num];
@@ -14,9 +14,9 @@ function playRound(playerSelection){
   console.log('Computer chose '+computerSelection)
   if (playerSelection==computerSelection){
     return 'It\'s a draw! Both players chose '+playerSelection;
-  } else if(playerSelection==="rock" && computerSelection==="scissors" || playerSelection==="paper" && computerSelection==="rock" || playerSelection==="scissors" && computerSelection==="paper"){
+  } else if(playerSelection==="Rock" && computerSelection==="Scissors" || playerSelection==="Paper" && computerSelection==="Rock" || playerSelection==="Scissors" && computerSelection==="Paper"){
     return 'You Win! '+playerSelection+' beats '+computerSelection
-  }else if(playerSelection==="rock" && computerSelection==="paper" || playerSelection==="paper" && computerSelection==="scissors" || playerSelection==="scissors" && computerSelection==="rock"){
+  }else if(playerSelection==="Rock" && computerSelection==="Paper" || playerSelection==="Paper" && computerSelection==="Scissors" || playerSelection==="Scissors" && computerSelection==="Rock"){
      return 'You Lose! '+computerSelection+' beats '+playerSelection;
 }}
 
