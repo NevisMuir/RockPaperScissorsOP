@@ -1,4 +1,6 @@
 const RPS = ['rock', 'paper', 'scissors']
+const result = document.querySelector('#result');
+
 //randomly generating rock, paper or scissors
 function computerPlay(){
   num = Math.floor(Math.random()*3);
@@ -23,7 +25,7 @@ const buttons = document.querySelectorAll('button');
 ///button event listener, button choice should replace variable playerSelection
 buttons.forEach((button)=>{
     button.addEventListener('click',()=>{
-        console.log(playRound(button.id))
+        result.textContent = playRound(button.id)
     })})
 
 
