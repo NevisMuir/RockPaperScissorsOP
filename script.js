@@ -3,12 +3,14 @@ const result = document.querySelector('#result');
 const computer = document.querySelector('#computer');
 const computerScoreBoard = document.querySelector('#computerScore')
 const playerScoreBoard = document.querySelector('#playerScore')
+const gameOver = document.querySelector('#gameOver')
 
 //randomly generating Rock, Paper or Scissors
 function computerPlay(){
   num = Math.floor(Math.random()*3);
   return RPS[num];
 }
+
 let computerScore = 0
 let playerScore = 0
 
@@ -28,6 +30,7 @@ function playRound(playerSelection){
      return 'You Lose! '+computerSelection+' beats '+playerSelection;
 }}
 
+
 //button select all query variable
 const buttons = document.querySelectorAll('button');
 ///button event listener, button choice should replace variable playerSelection
@@ -36,6 +39,9 @@ buttons.forEach((button)=>{
         result.textContent = playRound(button.id)
         computerScoreBoard.textContent= computerScore
         playerScoreBoard.textContent= playerScore
+        if(playerScore==5)gameOver.textContent ='Congratulations! You Won!';
+        if(computerScore==5)gameOver.textContent ='Game Over! Computer Wins';
     })})
+
 
 
